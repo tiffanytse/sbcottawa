@@ -100,6 +100,7 @@ body{
     text-transform: uppercase;
     clear: none;
     font-size: 1.2em;
+    line-height: 1; 
     @media only screen and (min-width: 30.0em) { //480px
       text-align: left;
       font-size: 1.4em;
@@ -115,6 +116,8 @@ body{
   }
   
   .site-description{
+    padding: 0;
+    margin: 0;
     clear: none;
     font-size: 0.875em;
     text-transform: uppercase;

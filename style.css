@@ -73,7 +73,8 @@ body {
     padding: 1.5em 0 0;
     text-transform: uppercase;
     clear: none;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    line-height: 1; }
     @media only screen and (min-width: 30.0em) {
       .site-header .site-title {
         text-align: left;
@@ -89,6 +90,8 @@ body {
         opacity: 0.7;
         color: #fff; }
   .site-header .site-description {
+    padding: 0;
+    margin: 0;
     clear: none;
     font-size: 0.875em;
     text-transform: uppercase;
