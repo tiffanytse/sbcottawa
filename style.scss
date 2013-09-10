@@ -1,0 +1,232 @@
+/*
+Theme Name: SBC Custom Child Theme
+Theme URI: http://sbcottawa.ca
+Author: Tiffany Tse Design and Development
+Author URI: http://tiffanytse.ca
+Description: A custom theme created for Saint Brigid's Centre for the Arts 2013.
+Version: 1.0
+Template: twentytwelve
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sbcottawa
+
+*/
+
+@import url("../twentytwelve/style.css");
+
+@mixin ease{
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.single-author .entry-meta .by-author{
+	display: inline;
+}
+
+.event-item{
+	clear: both;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body{
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  background: transparent url('images/bg.jpg') no-repeat top center;
+  background-size: cover;
+  
+  @media only screen and (min-width: 37.5em) { //480px
+  background: transparent url('images/bg.jpg') no-repeat top center;
+  background-size: contain;
+  }
+  
+  @media only screen and (min-width: 60em) { //600px
+  background-position: center -150px;
+  background-size: contain;
+  }
+}
+
+.site{
+  padding: 0;
+  background-color: transparent;
+  margin: 0 auto;
+  
+}
+
+.wrapper{
+  padding: 0 1em 1em;
+  background-color: #fff;
+  margin-top: 1em;
+}
+
+
+// Header 
+.site-header{
+  padding: 1em;
+  
+  -webkit-box-shadow:  0px 7px 0px 0px rgba(0, 0, 0, 0.4);
+          box-shadow:  0px 7px 0px 0px rgba(0, 0, 0, 0.4);
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  @media only screen and (min-width: 30.0em) { //480px
+    padding: 0 1em 1em;
+  }
+  @media only screen and (min-width: 37.5em) { //480px
+  
+  margin-bottom: 100px;
+  }
+  .logo-ribbon{
+    display: none;
+    
+    @media only screen and (min-width: 32.0em) { //480px
+    margin: 0 2em 1em 0;
+    display: inline-block;
+    padding: 1em 0.5em;
+    height: 65px;
+    background-color: #fff;
+    float: left;
+    }
+  }
+  
+  .site-title{
+    margin: 0;
+    padding: 1.5em 0 0;
+    text-transform: uppercase;
+    clear: none;
+    font-size: 1.2em;
+    @media only screen and (min-width: 30.0em) { //480px
+      text-align: left;
+      font-size: 1.4em;
+    }
+    a{
+      color: #fff;
+      &:hover{
+        @include ease;
+       opacity: 0.7;
+       color: #fff; 
+      }
+    }
+  }
+  
+  .site-description{
+    clear: none;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    color: #fff;
+    @media only screen and (min-width: 30.0em) { //480px
+      text-align: left;
+    }
+  }
+}
+
+.menu-toggle{
+  border: 0;
+  padding: .7em 1em;
+  box-shadow: none;
+  background-color: rgba(0,0,0, 0.5);
+  color: #f1f1f1;
+  background-image: none;
+  &:hover{
+    background-image: none;
+    color: #fff;
+    background-color: rgba(0,0,0, 0.6);
+  }
+}
+
+.menu-toggle.toggled-on, .menu-toggle:active{
+  background-color: rgba(0,0,0, 0.5);
+  box-shadow: none;
+  background-image: none;
+  color: #fff;
+}
+
+.main-navigation ul.nav-menu.toggled-on, .menu-toggle{
+  display: block;
+  @media only screen and (min-width: 37.5em) { //480px
+  display: none;
+  border: 0;
+  }
+}
+
+#site-navigation, #lower-navigation{
+  
+  li{
+    margin: 0;
+    padding: 1em 0;
+    display: block;
+    border-bottom: 1px solid #666;
+
+  }
+ ul li a{
+   text-decoration: none;
+   margin: 0;
+   width: 100%;
+   &:hover{
+    text-decoration: underline; 
+   }
+ }
+ 
+ li:last-child a{
+   border: 0;
+ }
+ 
+ @media only screen and (min-width: 37.5em) { //480px
+   ul{
+     border: 0;
+   }
+   li{
+     display: inline-block;
+     border: 0;
+     padding: 0;
+     margin-right: 2em;
+   }
+ }
+}
+
+
+#site-navigation {
+  ul li a{
+    color: #fff;
+  }
+}
+
+#lower-navigation{
+  padding: 0 1em 1em;
+
+  li{
+    border-bottom: 1px solid #ccc;
+   
+  }
+  
+  @media only screen and (min-width: 37.5em) { //480px
+      float: right; 
+   }
+}
+// Ticker
+#ticker {
+	height: 300px;
+	overflow: hidden;
+	
+	li{
+	  height: 300px;
+	}
+}
+
+// Flexslider
+
+.flex-container{
+  position: relative;
+  a{
+    color: rgba(0,0,0,.6);
+  }
+  a:hover{
+  color: rgba(0,0,0,1);
+  }
+}
+/*test*/
