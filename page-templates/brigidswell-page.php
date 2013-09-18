@@ -80,7 +80,10 @@ get_header(); ?>
 jQuery(function ($) {
   $(window).load(function() {
     function tick(){
-  		$('#ticker li:first').slideUp( function () { $(this).appendTo($('#ticker')).slideDown(); });
+      if($("#ticker li").length > 1)
+      {
+   		$('#ticker li:first').fadeOut( function () { $(this).appendTo($('#ticker')).fadeIn(); });
+      }
   	}
   	setInterval(function(){ tick () }, 5000);
   });
