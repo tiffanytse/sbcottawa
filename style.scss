@@ -52,17 +52,20 @@ body{
   }
 }
 
-.site{
+body .site{
   padding: 0;
   background-color: transparent;
   margin: 0 auto;
-  
+  @media only screen and (min-width: 60.0em) { //960px
+    margin: 0 auto; 
+    padding: 0;
+    max-width: inherit; 
+  }
 }
 
 .wrapper{
   padding: 0 1em 1em;
   background-color: #fff;
-  margin-top: 1em;
 }
 
 
@@ -78,19 +81,21 @@ body{
     padding: 0 1em 1em;
   }
   @media only screen and (min-width: 37.5em) { //480px
-  
-  margin-bottom: 100px;
+    margin-bottom: 100px;
   }
+  
+
+  
   .logo-ribbon{
     display: none;
     
     @media only screen and (min-width: 32.0em) { //480px
-    margin: 0 2em 1em 0;
-    display: inline-block;
-    padding: 1em 0.5em;
-    height: 65px;
-    background-color: #fff;
-    float: left;
+      margin: 0 2em 1em 0;
+      display: inline-block;
+      padding: 1em 0.5em;
+      height: 65px;
+      background-color: #fff;
+      float: left;
     }
   }
   
@@ -149,6 +154,11 @@ body{
   color: #fff;
 }
 
+hgroup, .main-navigation, #lower-navigation{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .main-navigation ul.nav-menu.toggled-on, .menu-toggle{
   display: block;
   @media only screen and (min-width: 37.5em) { //480px
@@ -200,15 +210,19 @@ body{
 }
 
 #lower-navigation{
-  padding: 0 1em 1em;
-
+  overflow: auto;
+  max-width: 1100px;
+  margin: 0 auto;
   li{
     border-bottom: 1px solid #ccc;
    
   }
   
   @media only screen and (min-width: 37.5em) { //480px
-      float: right; 
+      .menu-organizations-container{
+        float: right; 
+        
+      }
    }
 }
 // Ticker

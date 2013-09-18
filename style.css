@@ -36,15 +36,19 @@ body {
       background-position: center -150px;
       background-size: contain; } }
 
-.site {
+body .site {
   padding: 0;
   background-color: transparent;
   margin: 0 auto; }
+  @media only screen and (min-width: 60em) {
+    body .site {
+      margin: 0 auto;
+      padding: 0;
+      max-width: inherit; } }
 
 .wrapper {
   padding: 0 1em 1em;
-  background-color: #fff;
-  margin-top: 1em; }
+  background-color: #fff; }
 
 .site-header {
   padding: 1em;
@@ -52,7 +56,7 @@ body {
   box-shadow: 0px 7px 0px 0px rgba(0, 0, 0, 0.4);
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6); }
-  @media only screen and (min-width: 30.0em) {
+  @media only screen and (min-width: 30em) {
     .site-header {
       padding: 0 1em 1em; } }
   @media only screen and (min-width: 37.5em) {
@@ -60,7 +64,7 @@ body {
       margin-bottom: 100px; } }
   .site-header .logo-ribbon {
     display: none; }
-    @media only screen and (min-width: 32.0em) {
+    @media only screen and (min-width: 32em) {
       .site-header .logo-ribbon {
         margin: 0 2em 1em 0;
         display: inline-block;
@@ -75,7 +79,7 @@ body {
     clear: none;
     font-size: 1.2em;
     line-height: 1; }
-    @media only screen and (min-width: 30.0em) {
+    @media only screen and (min-width: 30em) {
       .site-header .site-title {
         text-align: left;
         font-size: 1.4em; } }
@@ -96,7 +100,7 @@ body {
     font-size: 0.875em;
     text-transform: uppercase;
     color: #fff; }
-    @media only screen and (min-width: 30.0em) {
+    @media only screen and (min-width: 30em) {
       .site-header .site-description {
         text-align: left; } }
 
@@ -117,6 +121,10 @@ body {
   box-shadow: none;
   background-image: none;
   color: #fff; }
+
+hgroup, .main-navigation, #lower-navigation {
+  max-width: 1100px;
+  margin: 0 auto; }
 
 .main-navigation ul.nav-menu.toggled-on, .menu-toggle {
   display: block; }
@@ -151,11 +159,13 @@ body {
   color: #fff; }
 
 #lower-navigation {
-  padding: 0 1em 1em; }
+  overflow: auto;
+  max-width: 1100px;
+  margin: 0 auto; }
   #lower-navigation li {
     border-bottom: 1px solid #ccc; }
   @media only screen and (min-width: 37.5em) {
-    #lower-navigation {
+    #lower-navigation .menu-organizations-container {
       float: right; } }
 
 #ticker {
