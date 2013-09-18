@@ -45,11 +45,11 @@ html, body{
 
 body{
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  background: #222 url('images/bg.jpg') no-repeat top center;
+  background: #111 url('images/bg.jpg') no-repeat top center;
   background-size: cover;
   
   @media only screen and (min-width: 37.5em) { //480px
-  background: #222 url('images/bg.jpg') no-repeat top center;
+  background: #111 url('images/bg.jpg') no-repeat top center;
   background-size: contain;
   }
   
