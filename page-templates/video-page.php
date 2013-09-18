@@ -31,7 +31,6 @@ get_header(); ?>
   <script type="text/javascript" charset="utf-8">
   jQuery(function ($) {
       $(".video").fitVids();
-    });
   });
   </script>
 <?php get_footer(); ?>

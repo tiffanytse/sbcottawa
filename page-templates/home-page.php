@@ -20,7 +20,9 @@ get_header(); ?>
 		<div id="content" role="main">
 
        <div class="event-listing">
-          <h1>Upcoming Events</h1>
+         <header class="entry-header">
+           <h1 class="entry-title">Upcoming Events</h1>
+         </header><!-- .entry-header -->
           <br>
           <?php
            $events = eo_get_events(array(
