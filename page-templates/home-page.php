@@ -20,10 +20,6 @@ get_header(); ?>
 		<div id="content" role="main">
 
        <div class="event-listing">
-         <header class="entry-header">
-           <h1 class="entry-title">Upcoming Events</h1>
-         </header><!-- .entry-header -->
-          <br>
           <?php
            $events = eo_get_events(array(
                    'numberposts'=>5,
@@ -45,8 +41,8 @@ get_header(); ?>
                              <li>
                                <a href="%s">%s</a>
                                <div class="flex-caption">
-                                <a href="%s"<h2>%s</h2></a>
-                                  <p>%s<p>
+                                <a href="%s"><h3> %s </h3> </a>
+                                <p class="date">%s<p>
                                </div>
                              </li>
                         ',
@@ -61,7 +57,7 @@ get_header(); ?>
             endif;
            ?>        
         </div><!-- event listing -->
-
+        <div class="placeholder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/placeholder.png" alt=""></div>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
 				<?php comments_template( '', true ); ?>
