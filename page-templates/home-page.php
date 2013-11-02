@@ -41,7 +41,7 @@ get_header(); ?>
                              <li>
                                <a href="%s">%s</a>
                                <div class="flex-caption">
-                                <a href="%s"><h3> %s </h3> </a>
+                                <a href="%s"><h3> %s </h3> </a><br>
                                 <p class="date">%s<p>
                                </div>
                              </li>
@@ -50,7 +50,7 @@ get_header(); ?>
                        get_the_post_thumbnail($event->ID, 'large'),
                        get_permalink($event->ID),
                        get_the_title($event->ID),
-                       eo_get_the_start($format, $event->ID,null,$event->occurrence_id)
+                       eo_get_the_start('F jS Y'. '<\p \c\l\a\s\s \=\"\t\"/>' .'g:i a' . '<\p/>', $event->ID,null,$event->occurrence_id)
                     );
                endforeach;
                echo '</ul></div></div>';
@@ -75,7 +75,8 @@ get_header(); ?>
     $(window).load(function() {
       $('.flexslider').flexslider({
             animation: "slide",
-            controlsContainer: ".flex-container"
+            controlsContainer: ".flex-container", 
+            smoothHeight: 'true'   
       });
     });
   });
