@@ -34,23 +34,28 @@ get_header(); ?>
                       <div class="flexslider">
                         <ul class="slides">';
                foreach ($events as $event):
+                    
                     //Check if all day, set format accordingly
-                    $format = ( eo_is_all_day($event->ID) ? get_option('date_format') : get_option('date_format').' '.get_option('time_format') );
+                    $format = ( eo_is_all_day($event->ID) ? get_option('date_format') : get_option('date_format').' \&\n\b\s\p; | \&\n\b\s\p;'.get_option('time_format') );
                     printf(
                        '
                              <li>
-                               <a href="%s">%s</a>
+                               %s
                                <div class="flex-caption">
                                 <a href="%s"><h3> %s </h3> </a><br>
-                                <p class="date">%s<p>
+                                <p class="date">%s</p><br>
+                                <a href="%s" class="ed-link">Event Details</a>
                                </div>
                              </li>
                         ',
-                       get_permalink($event->ID),
                        get_the_post_thumbnail($event->ID, 'large'),
                        get_permalink($event->ID),
                        get_the_title($event->ID),
-                       eo_get_the_start('F jS Y'. '<\p \c\l\a\s\s \=\"\t\"/>' .'g:i a' . '<\p/>', $event->ID,null,$event->occurrence_id)
+                       eo_get_the_start($format, $event->ID,null,$event->occurrence_id),
+                       get_permalink($event->ID)
+                       
+
+                       //eo_get_the_start('F jS Y'. '<\p \c\l\a\s\s \=\"\t\"/>' .'g:i a' . '<\p/>', $event->ID,null,$event->occurrence_id)
                     );
                endforeach;
                echo '</ul></div></div>';
