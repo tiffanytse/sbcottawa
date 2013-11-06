@@ -44,7 +44,7 @@ get_header(); ?>
                                <div class="flex-caption">
                                 <a href="%s"><h3> %s </h3> </a><br>
                                 <p class="date">%s</p><br>
-                                <a href="%s" class="ed-link">Event Details</a>
+                                <a href="%s" class="ed-link">Event Details &nbsp; › </a>
                                </div>
                              </li>
                         ',
