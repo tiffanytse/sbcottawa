@@ -106,7 +106,7 @@
 	<!-- Does the event have a venue? -->
 	<?php if( eo_get_venue() ): ?>
 		<!-- Display map -->
-		<div id="test" style="width:45%;float:right;">
+		<div class="map">
 		<?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%')); ?>
 		</div>
 	<?php endif; ?>

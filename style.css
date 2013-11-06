@@ -63,6 +63,9 @@ a {
   -o-transition: background-color 350ms ease-in-out;
   transition: background-color 350ms ease-in-out; }
 
+.site-content article {
+  border-bottom: 1px solid #ededed; }
+
 body .site {
   padding: 0;
   background-color: transparent;
@@ -382,11 +385,6 @@ img.wp-post-image {
     left: 6px; }
   .flex-direction-nav .flex-next {
     left: 46px; } }
-@media only screen and (min-width: 68.75em) {
-  .flex-direction-nav .flex-next {
-    bottom: 100px; }
-  .flex-direction-nav .flex-prev {
-    bottom: 144px; } }
 
 .flex-control-paging {
   padding-left: 20px; }
@@ -534,6 +532,28 @@ img.wp-post-image {
     color: #094d75;
     text-decoration: underline; }
 
+.t-i {
+  display: block;
+  padding-left: 1.5em;
+  background: transparent url("images/clock.png") no-repeat left center;
+  margin: .5em 0; }
+
+span[itemprop="location"],
+a[rel="tag"] {
+  font-style: italic; }
+
+.map {
+  clear: both;
+  display: block; }
+  @media only screen and (min-width: 37.5em) {
+    .map {
+      display: inline-block;
+      width: 55%;
+      left: 40%;
+      position: absolute;
+      min-height: 400px;
+      max-width: 400px; } }
+
 .event header img {
   width: 100%;
   border-top: 10px solid #111;
@@ -544,6 +564,7 @@ img.wp-post-image {
   margin: 1.5em 0; }
 .event .eo-event-meta {
   list-style-type: none;
+  line-height: 1.4;
   margin: 0;
   padding: 0; }
   .event .eo-event-meta li {
@@ -552,13 +573,38 @@ img.wp-post-image {
     margin: 1em 0 2em; }
     .event .eo-event-meta li strong {
       display: block; }
-    .event .eo-event-meta li .t-i {
-      display: block;
-      padding-left: 1.5em;
-      background: transparent url("images/clock.png") no-repeat left center; }
-    .event .eo-event-meta li a[rel="tag"] {
-      font-style: italic; }
 .event footer.entry-meta .by-author {
+  display: none; }
+
+.tax-event-category .page-title,
+.tax-event-venue .page-title {
+  font-size: 1em;
+  color: #222; }
+.tax-event-category .event header img,
+.tax-event-venue .event header img {
+  width: auto; }
+.tax-event-category .event .entry-title,
+.tax-event-venue .event .entry-title {
+  clear: both; }
+.tax-event-category .event .event-entry-meta,
+.tax-event-venue .event .event-entry-meta {
+  margin-top: .5em; }
+
+/*
+* Templates
+*/
+.event-item {
+  min-height: 200px; }
+  .event-item img {
+    border-top: 10px solid #111;
+    border-bottom: 5px solid #111;
+    float: left;
+    clear: both; }
+  .event-item h1 {
+    clear: none; }
+
+.leaflet-control-attribution.leaflet-control,
+.gmnoprint {
   display: none; }
 
 footer[role="contentinfo"] {

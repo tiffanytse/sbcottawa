@@ -119,6 +119,10 @@ a{
      transition: background-color 350ms ease-in-out;
 }
 
+.site-content article{
+  border-bottom: 1px solid #ededed;
+}
+
 body .site{
   padding: 0;
   background-color: transparent;
@@ -538,12 +542,7 @@ hgroup, #site-navigation, #lower-navigation{
       }
    }
    @media only screen and (min-width: 68.75em) { //880px
-     .flex-next{
-       bottom: 100px;
-     }
-     .flex-prev{
-       bottom: 144px;
-     }
+  
      
    }
   
@@ -735,20 +734,48 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
 
 
 // Event Pages
+
+  .t-i{
+    display: block;
+    padding-left: 1.5em;
+    background: transparent url('images/clock.png') no-repeat left center;
+    margin: .5em 0;
+  }
+  
+  span[itemprop="location"], 
+  a[rel="tag"]{
+    font-style: italic;
+  }
+  
+  .map{
+    clear: both;
+    display: block;
+    @media only screen and (min-width: 37.5em) { //600px
+      display: inline-block;
+      width: 55%;
+      left: 40%;
+      position: absolute;
+      min-height: 400px;
+      max-width: 400px;
+    }
+  }
+  
+// Single Event
 .event{
   header img{
     width: 100%;
     @include img-borders;
   }
+  
   h4{
     font-size: 1.2em;
     font-style: italic;
     margin: 1.5em 0;
-    
   }
   
   .eo-event-meta{
     list-style-type: none;
+    line-height: 1.4;
     @include zero;
   
     li{
@@ -756,14 +783,6 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
       margin: 1em 0 2em;
       strong{
         display: block;
-      }
-      .t-i{
-        display: block;
-        padding-left: 1.5em;
-        background: transparent url('images/clock.png') no-repeat left center;
-      }
-      a[rel="tag"]{
-        font-style: italic;
       }
     }//li
     
@@ -776,6 +795,57 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
 }//event
 
 
+// Event Taxonomy Display
+.tax-event-category, 
+.tax-event-venue{
+  .page-title{
+    font-size: 1em;
+    color: #222;
+    //font-weight: normal;
+    
+  }
+  .event{
+    header img{
+      width: auto;
+    }
+    .entry-title{
+      clear: both;
+      
+      
+    }
+    .event-entry-meta{
+      margin-top: .5em;
+      
+      //padding-left: 170px;
+    }
+  } 
+
+}
+
+/*
+* Templates
+*/
+
+// Events page template
+.event-item{
+  min-height: 200px;
+  img{
+    @include img-borders;
+    float: left;
+    clear: both;
+  }
+  h1{
+    clear: none;
+  }
+  
+}
+
+
+// Leaflet maps
+.leaflet-control-attribution.leaflet-control, 
+.gmnoprint{
+  display: none;
+}
 // Footer
 
 footer[role="contentinfo"]{
