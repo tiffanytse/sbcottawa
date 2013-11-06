@@ -16,14 +16,17 @@ Text Domain: sbcottawa
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: local("Oswald Regular"), local("Oswald-Regular"), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff) format("woff"); }
+  src: local("Oswald Regular"), local("Oswald-Regular"), url("http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff") format("woff"); }
 
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: local("Oswald Bold"), local("Oswald-Bold"), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff) format("woff"); }
+  src: local("Oswald Bold"), local("Oswald-Bold"), url("http://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff") format("woff"); }
 
+/*
+* Variables
+*/
 .single-author .entry-meta .by-author {
   display: inline; }
 
@@ -282,7 +285,7 @@ hgroup, #site-navigation, #lower-navigation {
         position: relative;
         bottom: -5px; }
       #lower-navigation ul li {
-        padding: 0 0;
+        padding: 0;
         margin: 0 0 0 5px;
         display: inline-block;
         text-align: center; }
@@ -400,12 +403,16 @@ img.wp-post-image {
   height: 15px;
   width: 10px;
   background: #666;
-  background: rgba(0, 0, 0, 0.8);
-  border-right: 5px solid rgba(255, 255, 255, 0.2); }
+  background: rgba(0, 0, 0, 0.6);
+  border-right: 5px solid rgba(255, 255, 255, 0.4); }
+  .flex-control-paging li a.flex-active, .flex-control-paging li a:hover {
+    background: #000; }
 
 .flex-control-nav {
   text-align: left;
-  bottom: 30px; }
+  bottom: 30px;
+  width: auto;
+  right: 20px; }
 
 .flex-caption a {
   text-decoration: none; }
@@ -476,7 +483,83 @@ img.wp-post-image {
   padding-bottom: 120px; }
   @media only screen and (min-width: 37.5em) {
     .placeholder img {
-      padding-bottom: 130px; } }
+      padding-bottom: 70px; } }
+
+.entry-header .entry-title {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 1.625em;
+  color: #222; }
+
+.main a,
+.comments-link a,
+.entry-meta a,
+.entry-content a,
+.comment-content a {
+  color: #1a7ebe;
+  text-decoration: none;
+  -webkit-transition: color 350ms ease-in-out;
+  -moz-transition: color 350ms ease-in-out;
+  -ms-transition: color 350ms ease-in-out;
+  -o-transition: color 350ms ease-in-out;
+  transition: color 350ms ease-in-out; }
+  .main a:visited, .main a:link,
+  .comments-link a:visited,
+  .comments-link a:link,
+  .entry-meta a:visited,
+  .entry-meta a:link,
+  .entry-content a:visited,
+  .entry-content a:link,
+  .comment-content a:visited,
+  .comment-content a:link {
+    color: #1a7ebe;
+    text-decoration: none;
+    -webkit-transition: color 350ms ease-in-out;
+    -moz-transition: color 350ms ease-in-out;
+    -ms-transition: color 350ms ease-in-out;
+    -o-transition: color 350ms ease-in-out;
+    transition: color 350ms ease-in-out; }
+  .main a:hover, .main a:active, .main a:focus,
+  .comments-link a:hover,
+  .comments-link a:active,
+  .comments-link a:focus,
+  .entry-meta a:hover,
+  .entry-meta a:active,
+  .entry-meta a:focus,
+  .entry-content a:hover,
+  .entry-content a:active,
+  .entry-content a:focus,
+  .comment-content a:hover,
+  .comment-content a:active,
+  .comment-content a:focus {
+    color: #094d75;
+    text-decoration: underline; }
+
+.event header img {
+  width: 100%;
+  border-top: 10px solid #111;
+  border-bottom: 5px solid #111; }
+.event h4 {
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 1.5em 0; }
+.event .eo-event-meta {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .event .eo-event-meta li {
+    margin: 0;
+    padding: 0;
+    margin: 1em 0 2em; }
+    .event .eo-event-meta li strong {
+      display: block; }
+    .event .eo-event-meta li .t-i {
+      display: block;
+      padding-left: 1.5em;
+      background: transparent url("images/clock.png") no-repeat left center; }
+    .event .eo-event-meta li a[rel="tag"] {
+      font-style: italic; }
+.event footer.entry-meta .by-author {
+  display: none; }
 
 footer[role="contentinfo"] {
   border-top: 0;

@@ -22,6 +22,14 @@ Text Domain: sbcottawa
   transition: all 500ms ease-in-out;
 }
 
+@mixin ease-color{
+  -webkit-transition: color 350ms ease-in-out;
+  -moz-transition: color 350ms ease-in-out;
+  -ms-transition: color 350ms ease-in-out;
+  -o-transition: color 350ms ease-in-out;
+  transition: color 350ms ease-in-out;
+}
+
 @mixin border-box{
   -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box; 
@@ -29,21 +37,43 @@ Text Domain: sbcottawa
   
 }
 
-$sbc-blue : #1a7ebe;
+@mixin img-borders{
+  border-top: 10px solid #111;
+  border-bottom: 5px solid #111;
+}
+
+@mixin zero{
+  margin: 0;
+  padding: 0;
+}
 
 // Fonts
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+  src: local('Oswald Regular'), local('Oswald-Regular'), url('http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff') format('woff');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Oswald Bold'), local('Oswald-Bold'), url('http://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
 }
+
+/*
+* Variables
+*/
+
+//Colors
+$sbc-blue : #1a7ebe;
+$sbc-dark-blue: #094d75;
+
+// Font Stacks
+$oswald: "Oswald", Helvetica, Arial, sans-serif;
+$lato:   "Lato", Helvetica, Arial, sans-serif;
+
+
 
 .single-author .entry-meta .by-author{
 	display: inline;
@@ -60,7 +90,7 @@ html, body{
 }
 
 body{
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: $lato;
   background: #111 url('images/bg.jpg') no-repeat top center;
   background-size: cover;
   
@@ -367,7 +397,7 @@ hgroup, #site-navigation, #lower-navigation{
     
     ul li{
        //background-color: red;
-       padding: 0 0;
+       padding: 0;
        margin:0 0 0 5px;
        display: inline-block;
        text-align: center;
@@ -440,8 +470,8 @@ hgroup, #site-navigation, #lower-navigation{
 .flexslider{
   border: 0;
   background: #111;
-  border-top: 10px solid #111;
-  border-bottom: 5px solid #111;
+  @include img-borders;
+  
   //margin:0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -537,13 +567,19 @@ border-radius: 0;
 height: 15px;
 width: 10px;
 background: #666;
-background: rgba(0,0,0,0.8);
-border-right: 5px solid rgba(255, 255, 255, 0.2);
+background: rgba(0,0,0,0.6);
+border-right: 5px solid rgba(255, 255, 255, 0.4);
+ &.flex-active, 
+ &:hover{
+   background: #000;
+ }
 }
 
 .flex-control-nav{
   text-align: left;
   bottom: 30px;
+  width: auto;
+  right: 20px;
 }
 
 .flex-caption{
@@ -657,12 +693,87 @@ border-right: 5px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   padding-bottom: 120px;
   @media only screen and (min-width: 37.5em) { //600px
-    padding-bottom: 130px;
+    padding-bottom: 70px;
   
   }
 }
 
 
+// Typography
+
+.entry-header .entry-title{
+  font-family: $oswald;
+  font-size: 1.625em; //26px
+  color: #222;
+  //text-transform: uppercase;
+}
+
+// Links
+
+.main a, 
+.comments-link a, 
+.entry-meta a, 
+.entry-content a, 
+.comment-content a {
+  color: $sbc-blue;
+  text-decoration: none;
+  @include ease-color;
+  &:visited, 
+  &:link{
+    color: $sbc-blue;
+    text-decoration: none;
+    @include ease-color;
+  }
+  &:hover,
+  &:active,
+  &:focus{
+    color: $sbc-dark-blue;
+    
+    text-decoration: underline;
+  }
+}
+
+
+// Event Pages
+.event{
+  header img{
+    width: 100%;
+    @include img-borders;
+  }
+  h4{
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 1.5em 0;
+    
+  }
+  
+  .eo-event-meta{
+    list-style-type: none;
+    @include zero;
+  
+    li{
+      @include zero;
+      margin: 1em 0 2em;
+      strong{
+        display: block;
+      }
+      .t-i{
+        display: block;
+        padding-left: 1.5em;
+        background: transparent url('images/clock.png') no-repeat left center;
+      }
+      a[rel="tag"]{
+        font-style: italic;
+      }
+    }//li
+    
+    
+  }//event meta
+  
+  footer.entry-meta .by-author{
+    display: none;
+  }
+}//event
 
 
 // Footer
