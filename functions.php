@@ -20,7 +20,10 @@ add_action( 'wp_enqueue_scripts', 'tto_custom_scripts' );
 // Add the new menu
 register_nav_menus( array(
     'primary' => __( 'Top Menu (Above Header)', 'tto' ),
-    'secondary' => __( 'Lower Menu (Below Header))', 'tto'),
+    'secondary' => __( 'Secondary Menu (Header)', 'tto'),
+    'pages' => __( 'Footer Saint Brigids Menu', 'tto'),
+    'organizations' => __( 'Footer Organizations Menu', 'tto'),
+    'connect' => __( 'Footer Connect Menu', 'tto'),
 ) );
 
 

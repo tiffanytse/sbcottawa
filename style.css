@@ -87,7 +87,8 @@ body .site {
   position: relative; }
   @media only screen and (min-width: 60em) {
     .wrapper {
-      padding: 1em 2em; } }
+      padding: 1em 2em;
+      margin-top: -4px; } }
 
 .site-header {
   padding: 1em;
@@ -284,9 +285,10 @@ hgroup, #site-navigation, #lower-navigation {
       overflow: auto; }
       #lower-navigation .menu-organizations-container {
         float: right;
+        margin: 0; }
+      #lower-navigation ul {
         margin: 0;
-        position: relative;
-        bottom: -5px; }
+        padding: 0; }
       #lower-navigation ul li {
         padding: 0;
         margin: 0 0 0 5px;
@@ -610,5 +612,94 @@ a[rel="tag"] {
 footer[role="contentinfo"] {
   border-top: 0;
   color: #f1f1f1;
+  max-width: 1100px;
+  padding: 2em 1.5em;
   background-color: #111;
-  margin-top: 0; }
+  margin-top: 0;
+  color: #ccc; }
+  footer[role="contentinfo"] .col {
+    margin-top: 2em;
+    width: auto;
+    margin-right: 3em;
+    display: block;
+    font-weight: 400; }
+    footer[role="contentinfo"] .col strong {
+      color: #fff;
+      font-weight: 900; }
+  footer[role="contentinfo"] ul li {
+    margin: .5em 0; }
+  footer[role="contentinfo"] a,
+  footer[role="contentinfo"] a:link,
+  footer[role="contentinfo"] a:visited {
+    color: #ccc;
+    text-decoration: none;
+    border-bottom: 1px solid #111;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+  footer[role="contentinfo"] a:hover,
+  footer[role="contentinfo"] a:focus,
+  footer[role="contentinfo"] a:active {
+    color: #aaa;
+    border-bottom: 1px solid #555; }
+  footer[role="contentinfo"] .connect {
+    width: 75px; }
+  footer[role="contentinfo"] a[title="Facebook"],
+  footer[role="contentinfo"] a[title="Vimeo"] {
+    width: 25px;
+    height: 25px;
+    margin: .5em .5em 1em 0;
+    display: inline-block;
+    float: left;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 1em;
+    border: 0; }
+    footer[role="contentinfo"] a[title="Facebook"]:hover, footer[role="contentinfo"] a[title="Facebook"]:focus, footer[role="contentinfo"] a[title="Facebook"]:active,
+    footer[role="contentinfo"] a[title="Vimeo"]:hover,
+    footer[role="contentinfo"] a[title="Vimeo"]:focus,
+    footer[role="contentinfo"] a[title="Vimeo"]:active {
+      ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+      filter: alpha(opacity=60);
+      opacity: 0.6; }
+  footer[role="contentinfo"] a[title="Facebook"] {
+    background: transparent url(images/facebook.png) no-repeat -5px 0;
+    background-size: 25px; }
+  footer[role="contentinfo"] a[title="Vimeo"] {
+    background: transparent url(images/vimeo.png) no-repeat 0 2px;
+    background-size: 25px; }
+  @media only screen and (min-width: 30em) {
+    footer[role="contentinfo"] .right-cols {
+      float: right;
+      display: inline-block; }
+    footer[role="contentinfo"] .left-cols {
+      float: left;
+      display: inline-block; } }
+  @media only screen and (min-width: 43.125em) {
+    footer[role="contentinfo"] .right {
+      float: right; }
+      footer[role="contentinfo"] .right.col {
+        margin-top: 0; }
+    footer[role="contentinfo"] .connect {
+      margin-right: 0; }
+    footer[role="contentinfo"] .left-cols {
+      margin-top: -2em; } }
+  @media only screen and (min-width: 51em) {
+    footer[role="contentinfo"] .col,
+    footer[role="contentinfo"] .left-cols {
+      margin-top: 0; }
+    footer[role="contentinfo"] .left {
+      float: left; }
+    footer[role="contentinfo"] .right {
+      float: right; }
+    footer[role="contentinfo"] ul li {
+      margin: 0; } }
+  footer[role="contentinfo"] address {
+    font-style: normal; }
+  footer[role="contentinfo"] .site-info {
+    padding-top: 3em;
+    clear: both;
+    color: #999; }
