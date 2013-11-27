@@ -37,8 +37,8 @@ get_header(); ?>
                 echo '<article class="event-item">';
                 
           			 the_post_thumbnail('thumbnail'); ?>
-            			<header class="eventslist-header">
-                    <a href='<?php the_permalink() ?>'> <h1><?php the_title(); ?></h1></a>
+            			<header class="eventslist-header entry-header">
+                    <a href='<?php the_permalink() ?>'> <h1 class="entry-title"><?php the_title(); ?></h1></a>
                   </header>
                   <?php eo_the_start('F jS Y \&\m\i\d\d\o\t\; g:ia'); ?>
                   
