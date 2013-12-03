@@ -40,7 +40,7 @@ get_header(); ?>
             			<header class="eventslist-header entry-header">
                     <a href='<?php the_permalink() ?>'> <h1 class="entry-title"><?php the_title(); ?></h1></a>
                   </header>
-                  <?php eo_the_start('F jS Y \&\m\i\d\d\o\t\; g:ia'); ?>
+                  <?php eo_the_start('F jS Y <\s\p\a\n \c\l\a\s\s="\t-\i">g:ia</\s\p\a\n>'); ?>
                   
                   
                 		<?php if( eo_reoccurs() ):?>
@@ -105,11 +105,10 @@ get_header(); ?>
                 	</ul>
                   <p><?php the_excerpt(); ?></p>
 
-<?php
+                  <?php
 
-                  echo '</article>';
+                  echo '</article>'; 
 
-                  
             }
            wp_reset_postdata();
        }else{

@@ -80,7 +80,7 @@ Text Domain: sbcottawa
 //Colors
 $sbc-blue : #1a7ebe;
 $sbc-dark-blue: #094d75;
-$text-color: #222;
+$text-color: #444;
 
 // Font Stacks
 $oswald: "Oswald", Helvetica, Arial, sans-serif;
@@ -537,7 +537,6 @@ hgroup, #site-navigation, #lower-navigation{
       }
     @media only screen and (min-width: 30em) { //480px
       margin: 1em;
-
       top: 30%;
     }
     @media only screen and (min-width: 37.5em) { //600px
@@ -591,7 +590,7 @@ height: 15px;
 width: 10px;
 background: #666;
 background: rgba(0,0,0,0.6);
-border-right: 5px solid rgba(255, 255, 255, 0.4);
+border-left: 5px solid rgba(255, 255, 255, 0.4);
  &.flex-active, 
  &:hover{
    background: #000;
@@ -783,8 +782,62 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
     }
   }
   
+
+// Events page template
+
+.event-item{
+  min-height: 200px;
+  img{
+    width: 100%;
+    @include img-borders;
+    float: left;
+    clear: both;
+    margin: 0 0 2em;
+    @media only screen and (min-width: 30em) { //480px
+      width: inherit;
+      float: left;
+      margin-right: 2em;
+    }
+  }
+  h1{
+    clear: none;
+  }
+}
+
+// Event Taxonomy Display
+.tax-event-category, 
+.tax-event-venue{
+  .page-title{
+    font-size: 1em;
+    color: #222;
+    //font-weight: normal;
+  }
+  .event{
+    header img{
+      width: auto;
+    }
+    .entry-title{
+      clear: both;
+    }
+    .event-entry-meta{
+      margin-top: .5em;
+      
+      //padding-left: 170px;
+    }
+  } 
+}
+
+
+
+
 // Single Event
-.event{
+.single-event h4{
+  margin:0 !important;
+}
+
+// Single and Multiple meta info
+.event, 
+.event-item{
   header img{
     width: 100%;
     @include img-borders;
@@ -817,33 +870,56 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
   }
 }//event
 
+// Events page template (multiple listing)
 
-// Event Taxonomy Display
-.tax-event-category, 
-.tax-event-venue{
-  .page-title{
-    font-size: 1em;
-    color: #222;
-    //font-weight: normal;
+.page-template-page-templatesevents-page-php{
+  .event-item .entry-header a, 
+  .event-item a{
+    text-decoration: none;
+    color: $sbc-blue;
     
-  }
-  .event{
-    header img{
-      width: auto;
-    }
+    @include ease;
     .entry-title{
-      clear: both;
-      
-      
+      color: $sbc-blue;
+      @include ease;
     }
-    .event-entry-meta{
-      margin-top: .5em;
-      
-      //padding-left: 170px;
+    &:link,
+    &:visited{
+      text-decoration: none;
+    }    
+  }
+  .event-item .entry-header a{
+    &:hover, 
+    &:focus, 
+    &:active{
+      .entry-title{
+      color: $sbc-dark-blue;
+      }
     }
-  } 
+  }
+  .event-item a{
+    &:hover, 
+    &:focus, 
+    &:active{
+      color: $sbc-dark-blue;
+      text-decoration: underline;
+    }
+  }
+
+  .t-i{
+    display: block;
+    padding-left: 1.5em;
+    background: transparent url('images/clock.png') no-repeat left center;
+    margin: .5em 0;
+    @media only screen and (min-width: 30em) { //480px
+      padding-left: 195px;
+      background-position: 175px center;
+    }
+  }
 
 }
+
+
 
 /*
 * Templates
@@ -867,25 +943,17 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
 }
 
 
-// Events page template
-.event-item{
-  min-height: 200px;
-  img{
-    @include img-borders;
-    float: left;
-    clear: both;
-  }
-  h1{
-    clear: none;
-  }
-  
-}
+
 
 // Forms
 
 .visual-form-builder {
   padding-bottom: 0;
   color: $text-color;
+  
+  label{
+    color: $text-color;
+  }
   .vfb-legend, 
   .vfb-section-div{
     margin-top: 1em;
@@ -934,15 +1002,18 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
     -ms-box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, .05); 
     -o-box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, .05); 
             box-shadow: inset 1px 1px 2px 0px rgba(0, 0, 0, .05);
-                width: 100%;
-                @media only screen and (min-width: 37.5em){ //600px 
-                width: 48%;
-                } 
+    width: 100%;
+    @media only screen and (min-width: 37.5em){ //600px 
+    width: 48%;
+    } 
   }
   
   .vfb-item.vfb-item-page-break{
     position: relative;
     bottom: -1em;
+    .vfb-page-counter{
+      margin-top: .5em;
+    }
   }
   
   .vfb-item-address{    
@@ -1015,7 +1086,7 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
      background: $sbc-blue;
      border: 0;
      color: #fff;
-     margin: 1em 0;
+     //margin: 1em 0;
      padding: .3em 1em .4em;
      display: inline-block;
      @include ease;
@@ -1038,6 +1109,19 @@ border-right: 5px solid rgba(255, 255, 255, 0.4);
 .gmnoprint{
   display: none;
 }
+  .mapsmarker{
+    margin-bottom: 2em;
+    margin-right: 2em;
+
+    @media only screen and (min-width: 52.5em){ //840px
+      float: left;
+      margin-bottom: 4em;
+      
+    }
+    @media only screen and (min-width: 60em){ //960px
+    }
+  }
+
 // Footer
 
 footer[role="contentinfo"]{
