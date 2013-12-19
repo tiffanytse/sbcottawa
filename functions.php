@@ -49,7 +49,7 @@ function twentytwelve_entry_meta() {
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( '<span class="by-author"> By %4$s</span>  &middot;  %3$s <span class="tags">Tagged: %2$s </span>', 'twentytwelve' );
+		$utility_text = __( '<span class="by-author"> By %4$s</span>  &middot;  %3$s <span class="tags"> %2$s </span>', 'twentytwelve' );
 	} elseif ( $categories_list ) {
 		$utility_text = __( '<span class="by-author"> By %4$s</span> &middot; %3$s', 'twentytwelve' );
 	} else {

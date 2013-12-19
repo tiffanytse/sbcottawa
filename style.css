@@ -734,6 +734,10 @@ a[rel="tag"] {
   color: #094d75;
   text-decoration: underline; }
 
+.page-template-page-templatesevents-page-php header.entry-header {
+  margin-bottom: 3em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ededed; }
 .page-template-page-templatesevents-page-php .t-i {
   display: block;
   padding-left: 1.5em;
@@ -741,7 +745,12 @@ a[rel="tag"] {
   margin: .5em 0; }
 @media only screen and (min-width: 30em) {
   .page-template-page-templatesevents-page-php .event-info {
-    padding-left: 175px; } }
+    padding-left: 175px;
+    margin-bottom: 2em; } }
+.page-template-page-templatesevents-page-php article.event-item {
+  margin-bottom: 3em; }
+  .page-template-page-templatesevents-page-php article.event-item .entry-header {
+    border-bottom: 0; }
 
 /*
 * Templates
@@ -905,6 +914,27 @@ p#form_success, .vfb-form-success {
     .mapsmarker {
       float: left;
       margin-bottom: 4em; } }
+
+.widget-area .widget a:visited, .widget-area .widget a:link {
+  color: #0e4264;
+  text-decoration: none; }
+.widget-area .widget a:hover, .widget-area .widget a:focus, .widget-area .widget a:active {
+  text-decoration: underline; }
+.widget-area .eo-future-date a {
+  background-color: #ddeffa;
+  padding: .2em 1em;
+  margin-left: -1em; }
+  .widget-area .eo-future-date a:hover, .widget-area .eo-future-date a:focus, .widget-area .eo-future-date a:active {
+    background-color: #b0d9f4;
+    text-decoration: none; }
+.widget-area .textwidget li {
+  margin-left: 1em; }
+
+.category-saint-brigids-centre-for-the-arts-blog span.tags {
+  display: block;
+  background-color: #ededed;
+  padding: .5em 1em;
+  margin: .5em 0; }
 
 footer[role="contentinfo"] {
   border-top: 0;
