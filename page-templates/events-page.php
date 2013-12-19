@@ -37,6 +37,7 @@ get_header(); ?>
                 echo '<article class="event-item">';
                 
           			 the_post_thumbnail('thumbnail'); ?>
+          			  <div class="event-info">
             			<header class="eventslist-header entry-header">
                     <a href='<?php the_permalink() ?>'> <h1 class="entry-title"><?php the_title(); ?></h1></a>
                   </header>
@@ -104,7 +105,7 @@ get_header(); ?>
 
                 	</ul>
                   <p><?php the_excerpt(); ?></p>
-
+                  </div> <!-- Event Info Close-->
                   <?php
 
                   echo '</article>'; 

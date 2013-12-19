@@ -33,12 +33,16 @@ get_header(); ?>
              echo '<ul id="ticker">';
              foreach ($events as $event):
                   //Check if all day, set format accordingly
-                  $format = ( eo_is_all_day($event->ID) ? get_option('date_format') : get_option('date_format').' '.get_option('time_format') );
+                  $format = ( eo_is_all_day($event->ID) ? get_option('date_format') : get_option('date_format').' \&\n\b\s\p; | \&\n\b\s\p;'.get_option('time_format') );
                   printf(
                      '<li>
-                     %s<h2><a href="%s"> %s </a></h2> on %s 
+                     %s
+                     <div class="ticker-info">
+                     <h2><a href="%s"> %s </a></h2>
+                     <p> %s</p> 
+                     </div>
                      </li>',
-                     get_the_post_thumbnail($event->ID, 'thumbnail'),
+                    get_the_post_thumbnail($event->ID, 'thumbnail'),
                      get_permalink($event->ID),
                      get_the_title($event->ID),
                      eo_get_the_start($format, $event->ID,null,$event->occurrence_id)
