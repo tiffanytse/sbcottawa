@@ -12,6 +12,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sbcottawa
 
 */
+.cf:before, .blog .meta-info:before,
+.single-post .meta-info:before,
+.page-template .meta-info:before,
+.cf:after,
+.blog .meta-info:after,
+.single-post .meta-info:after,
+.page-template .meta-info:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after, .blog .meta-info:after,
+.single-post .meta-info:after,
+.page-template .meta-info:after {
+  clear: both; }
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf, .blog .meta-info,
+.single-post .meta-info,
+.page-template .meta-info {
+  *zoom: 1; }
+
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
@@ -87,7 +113,7 @@ body .site {
   position: relative; }
   @media only screen and (min-width: 37.5em) {
     .wrapper {
-      padding: 1em 2em;
+      padding: 1em 2em 3em;
       margin-top: -4px; } }
 
 .site-header {
@@ -405,7 +431,7 @@ article.type-page {
             -o-transition: color 350ms ease-in-out;
             transition: color 350ms ease-in-out; }
             #ticker li h2 a:hover {
-              color: #0e4264; } }
+              color: #11517b; } }
       @media only screen and (min-width: 60em) {
         #ticker li h2 {
           font-size: 2em; } }
@@ -557,7 +583,7 @@ article.type-page {
       -o-transition: color 350ms ease-in-out;
       transition: color 350ms ease-in-out; }
       .flex-caption h3:hover {
-        color: #0e4264; } }
+        color: #11517b; } }
 
 .home .event-listing .flex-container {
   position: absolute;
@@ -618,7 +644,7 @@ article.type-page {
   .comment-content a:hover,
   .comment-content a:active,
   .comment-content a:focus {
-    color: #094d75;
+    color: #11517b;
     text-decoration: underline; }
 
 .t-i {
@@ -722,17 +748,19 @@ a[rel="tag"] {
     -ms-transition: color 350ms ease-in-out;
     -o-transition: color 350ms ease-in-out;
     transition: color 350ms ease-in-out; }
+    .entry-header a .entry-title:hover,
+    .event-item a .entry-title:hover {
+      color: #11517b; }
   .entry-header a:link, .entry-header a:visited,
   .event-item a:link,
   .event-item a:visited {
     text-decoration: none; }
 
-.entry-header a:hover .entry-title, .entry-header a:focus .entry-title, .entry-header a:active .entry-title {
-  color: #094d75; }
+.entry-header a:hover, .entry-header a:focus, .entry-header a:active {
+  color: #11517b; }
 
 .event-item a:hover, .event-item a:focus, .event-item a:active {
-  color: #094d75;
-  text-decoration: underline; }
+  color: #11517b; }
 
 .page-template-page-templatesevents-page-php header.entry-header {
   margin-bottom: 3em;
@@ -743,6 +771,8 @@ a[rel="tag"] {
   padding-left: 1.5em;
   background: transparent url("images/clock.png") no-repeat left center;
   margin: .5em 0; }
+.page-template-page-templatesevents-page-php .excerpt {
+  margin-top: 2em; }
 @media only screen and (min-width: 30em) {
   .page-template-page-templatesevents-page-php .event-info {
     padding-left: 175px;
@@ -751,6 +781,8 @@ a[rel="tag"] {
   margin-bottom: 3em; }
   .page-template-page-templatesevents-page-php article.event-item .entry-header {
     border-bottom: 0; }
+  .page-template-page-templatesevents-page-php article.event-item .eventslist-header {
+    margin-bottom: 0; }
 
 /*
 * Templates
@@ -895,7 +927,7 @@ a[rel="tag"] {
     .visual-form-builder input[type="submit"]:active,
     .visual-form-builder input[type="submit"]:focus {
       text-decoration: none;
-      background: #094d75; }
+      background: #11517b; }
 
 p#form_success, .vfb-form-success {
   background-color: #d4f4d4;
@@ -916,7 +948,7 @@ p#form_success, .vfb-form-success {
       margin-bottom: 4em; } }
 
 .widget-area .widget a:visited, .widget-area .widget a:link {
-  color: #0e4264;
+  color: #11517b;
   text-decoration: none; }
 .widget-area .widget a:hover, .widget-area .widget a:focus, .widget-area .widget a:active {
   text-decoration: underline; }
@@ -929,12 +961,43 @@ p#form_success, .vfb-form-success {
     text-decoration: none; }
 .widget-area .textwidget li {
   margin-left: 1em; }
-
-.category-saint-brigids-centre-for-the-arts-blog span.tags {
+.widget-area .widget-time {
   display: block;
-  background-color: #ededed;
-  padding: .5em 1em;
-  margin: .5em 0; }
+  margin-top: -6px;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-bottom: .5em; }
+
+.blog .site-content article,
+.single-post .site-content article,
+.page-template .site-content article {
+  padding-bottom: 0 !important; }
+.blog span.tags,
+.single-post span.tags,
+.page-template span.tags {
+  padding-left: 1.6em;
+  margin-left: 1.3em;
+  background: transparent url(images/tag.png) no-repeat left center;
+  background-size: 15px; }
+.blog .left,
+.single-post .left,
+.page-template .left {
+  float: left; }
+.blog .meta-info,
+.single-post .meta-info,
+.page-template .meta-info {
+  padding: .5em 0;
+  border-top: 1px solid #ededed;
+  color: #aaa; }
+  .blog .meta-info a,
+  .single-post .meta-info a,
+  .page-template .meta-info a {
+    color: #aaa; }
+.blog .edit-link,
+.single-post .edit-link,
+.page-template .edit-link {
+  clear: both;
+  display: block; }
 
 footer[role="contentinfo"] {
   border-top: 0;

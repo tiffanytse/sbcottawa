@@ -87,10 +87,10 @@ jQuery(function ($) {
     function tick(){
       if($("#ticker li").length > 1)
       {
-   		$('#ticker li:first').fadeOut( function () { $(this).appendTo($('#ticker')).fadeIn(); });
+   		$('#ticker li:first').slideUp( function () { $(this).appendTo($('#ticker')).fadeIn(); });
       }
   	}
-  	setInterval(function(){ tick () }, 20000);
+  	setInterval(function(){ tick () }, 5000);
   });
 });
 </script>
