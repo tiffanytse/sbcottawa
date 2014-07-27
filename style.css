@@ -333,12 +333,19 @@ hgroup, #site-navigation, #lower-navigation {
           padding: 0 1em;
           margin: 0;
           display: inline-block;
-          overflow: auto;
+          overflow: hidden;
+          font-size: 12px;
+          font-size: .9rem;
           line-height: 2;
           line-height: 2;
           padding: .2em .5em;
           background-color: rgba(0, 0, 0, 0.6);
-          color: #f1f1f1; }
+          color: #f1f1f1; } }
+      @media only screen and (min-width: 37.5em) and (min-width: 62em) {
+        #lower-navigation ul li a {
+          font-size: 14px;
+          font-size: 1rem; } }
+  @media only screen and (min-width: 37.5em) {
       #lower-navigation ul li a:hover,
       #lower-navigation .current-menu-item > a,
       #lower-navigation .current-menu-ancestor > a,
