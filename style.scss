@@ -466,7 +466,6 @@ hgroup, #site-navigation, #lower-navigation{
            font-size: 14px;
            font-size: 1rem;
          }
-
        }//a
      }//li
 
@@ -982,6 +981,13 @@ border-left: 5px solid rgba(255, 255, 255, 0.4);
       strong{
         display: block;
       }
+      
+     #eo-upcoming-dates{
+       padding-left: 1em;
+       li{
+         margin: .5em 0;
+       }
+     }
     }//li
     
     
@@ -1067,7 +1073,6 @@ border-left: 5px solid rgba(255, 255, 255, 0.4);
   }
 
 }
-
 
 
 /*

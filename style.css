@@ -736,6 +736,12 @@ a[rel="tag"] {
     .event .eo-event-meta li strong,
     .event-item .eo-event-meta li strong {
       display: block; }
+    .event .eo-event-meta li #eo-upcoming-dates,
+    .event-item .eo-event-meta li #eo-upcoming-dates {
+      padding-left: 1em; }
+      .event .eo-event-meta li #eo-upcoming-dates li,
+      .event-item .eo-event-meta li #eo-upcoming-dates li {
+        margin: .5em 0; }
 .event footer.entry-meta .by-author,
 .event-item footer.entry-meta .by-author {
   display: none; }

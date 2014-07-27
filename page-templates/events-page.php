@@ -85,15 +85,8 @@ get_header(); ?>
                 					'group_events_by'=>'occurrence'//Don't group by series
                 				));
 
-                				if( $upcoming->have_posts() ): ?>
-
-                					<li><strong><?php _e('Upcoming Dates','eventorganiser'); ?>:</strong>
-                						<ul id="eo-upcoming-dates">
-                							<?php while( $upcoming->have_posts() ): $upcoming->the_post(); ?>
-                									<li> <?php eo_the_start($date_format) ?></li>
-                							<?php endwhile; ?>
-                						</ul>
-                					</li>
+                				if( $upcoming->have_posts() ): // hide data ?>
+                				
 
                 					<?php 
                 					wp_reset_postdata(); 
