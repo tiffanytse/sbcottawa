@@ -125,8 +125,9 @@ body .site {
       padding: 0 0 1em 1em; } }
   @media only screen and (min-width: 37.5em) {
     .site-header {
-      margin-bottom: 55px; } }
-  @media only screen and (min-width: 60em) {
+      margin-bottom: 55px;
+      overflow: auto; } }
+  @media only screen and (min-width: 62em) {
     .site-header {
       padding: 0 1em 1em;
       height: 60px;
@@ -155,7 +156,7 @@ body .site {
         text-align: left;
         font-size: 1.4em;
         padding: 1em 0 0; } }
-    @media only screen and (min-width: 60em) {
+    @media only screen and (min-width: 62em) {
       .site-header .site-title {
         padding: .8em 0 0;
         font-size: 1.6em;
@@ -183,7 +184,7 @@ body .site {
     @media only screen and (min-width: 30em) {
       .site-header .site-description {
         text-align: left; } }
-    @media only screen and (min-width: 60em) {
+    @media only screen and (min-width: 62em) {
       .site-header .site-description {
         font-size: 14px;
         font-size: 1rem;
@@ -268,7 +269,7 @@ hgroup, #site-navigation, #lower-navigation {
       #site-navigation .menu-main-menu-container .current_page_ancestor > a {
         background-color: rgba(0, 0, 0, 0.9);
         font-weight: normal; } }
-  @media only screen and (min-width: 60em) {
+  @media only screen and (min-width: 62em) {
     #site-navigation .menu-main-menu-container {
       position: absolute;
       top: -40px;
