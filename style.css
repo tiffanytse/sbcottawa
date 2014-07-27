@@ -1,4 +1,3 @@
-@import url("../twentytwelve/style.css");
 /*
 Theme Name: SBC Custom Child Theme
 Theme URI: http://sbcottawa.ca
@@ -12,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sbcottawa
 
 */
+@import url("../twentytwelve/style.css");
 .cf:before, .blog .meta-info:before,
 .single-post .meta-info:before,
 .page-template .meta-info:before,
@@ -43,13 +43,11 @@ Text Domain: sbcottawa
   font-style: normal;
   font-weight: 400;
   src: local("Oswald Regular"), local("Oswald-Regular"), url("http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff") format("woff"); }
-
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
   src: local("Oswald Bold"), local("Oswald-Bold"), url("http://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6bO3LdcAZYWl9Si6vvxL-qU.woff") format("woff"); }
-
 /*
 * Variables
 */
@@ -515,10 +513,14 @@ article.type-page {
     background: #000; }
 
 .flex-control-nav {
-  text-align: left;
-  bottom: 30px;
-  width: auto;
-  right: 20px; }
+  display: none; }
+  @media only screen and (min-width: 37.5em) {
+    .flex-control-nav {
+      display: block;
+      text-align: left;
+      bottom: 30px;
+      width: auto;
+      right: 20px; } }
 
 .flex-caption a {
   text-decoration: none; }
@@ -1014,7 +1016,7 @@ footer[role="contentinfo"] {
     margin-top: 2em;
     width: auto;
     margin-right: 3em;
-    display: block;
+    display: inline-block;
     font-weight: 400; }
     footer[role="contentinfo"] .col strong {
       color: #fff;
