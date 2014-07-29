@@ -53,7 +53,7 @@
 		</div>
 
 		<div class="site-info">
-		  <p>Copyright <?php print date(Y); ?> &copy; Saint Brigid's Centre for the Arts</p>
+		  <p>Copyright <?php print date(Y); ?> &copy; Saint Brigid's Centre for the Arts | Website Design and Development by <a href="http://tiffanytse.ca">Tiffany Tse</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
