@@ -53,7 +53,7 @@
 		</div>
 
 		<div class="site-info">
-		  <p>Copyright 2013 &copy; Saint Brigid's Centre for the Arts</p>
+		  <p>Copyright <?php print date(Y); ?> &copy; Saint Brigid's Centre for the Arts</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
