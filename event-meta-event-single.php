@@ -107,7 +107,7 @@
 	<?php if( eo_get_venue() ): ?>
 		<!-- Display map -->
 		<div class="map">
-		<?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%')); ?>
+		<?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%', 'scrollwheel'=>false)); ?>
 		</div>
 	<?php endif; ?>
 

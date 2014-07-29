@@ -70,7 +70,7 @@ body {
     body {
       background: #111111 url("images/bg.jpg") no-repeat top center;
       background-size: contain; } }
-  @media only screen and (min-width: 60em) {
+  @media only screen and (min-width: 62em) {
     body {
       background-position: center -275px;
       background-size: contain; } }
@@ -365,7 +365,8 @@ img.wp-post-image {
   -webkit-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
-  border-radius: 0; }
+  border-radius: 0;
+  box-shadow: none; }
 
 hr {
   background-color: #ededed; }
@@ -657,14 +658,20 @@ article.type-page {
     text-decoration: underline; }
 
 .t-i {
-  display: block;
+  display: inline-block;
   padding-left: 1.5em;
-  background: transparent url("images/clock.png") no-repeat left center;
-  margin: .5em 0; }
+  background: transparent url("images/clock.png") no-repeat 0.4em center;
+  margin: 1em 0 0.25em; }
 
 span[itemprop="location"],
 a[rel="tag"] {
   font-style: italic; }
+
+.eo-event-meta {
+  width: 100% !important; }
+  @media only screen and (min-width: 600px) {
+    .eo-event-meta {
+      float: none !important; } }
 
 .map {
   clear: both;
@@ -672,11 +679,9 @@ a[rel="tag"] {
   @media only screen and (min-width: 37.5em) {
     .map {
       display: inline-block;
-      width: 55%;
-      left: 40%;
-      position: absolute;
-      min-height: 400px;
-      max-width: 400px; } }
+      width: 100%;
+      height: 200px;
+      margin-top: 1em; } }
 
 .event-item {
   min-height: 200px; }
@@ -732,10 +737,7 @@ a[rel="tag"] {
   .event-item .eo-event-meta li {
     margin: 0;
     padding: 0;
-    margin: 1em 0 2em; }
-    .event .eo-event-meta li strong,
-    .event-item .eo-event-meta li strong {
-      display: block; }
+    margin: .5em 0; }
     .event .eo-event-meta li #eo-upcoming-dates,
     .event-item .eo-event-meta li #eo-upcoming-dates {
       padding-left: 1em; }
@@ -779,13 +781,12 @@ a[rel="tag"] {
 
 .page-template-page-templatesevents-page-php header.entry-header {
   margin-bottom: 3em;
-  padding-bottom: 2em;
   border-bottom: 1px solid #ededed; }
 .page-template-page-templatesevents-page-php .t-i {
-  display: block;
+  display: inline-block;
   padding-left: 1.5em;
-  background: transparent url("images/clock.png") no-repeat left center;
-  margin: .5em 0; }
+  background: transparent url("images/clock.png") no-repeat 0.4em center;
+  margin: 1em 0 0.25em; }
 .page-template-page-templatesevents-page-php .excerpt {
   margin-top: 2em; }
 @media only screen and (min-width: 30em) {
@@ -817,6 +818,12 @@ a[rel="tag"] {
   color: #444444; }
   .visual-form-builder label {
     color: #444444; }
+  .visual-form-builder .vfb-error {
+    color: #bc1212;
+    background-color: #fccccf;
+    display: inline-block;
+    padding: 0 1em;
+    border: 1px solid #bc1212; }
   .visual-form-builder .vfb-legend,
   .visual-form-builder .vfb-section-div {
     margin-top: 1em;
@@ -968,9 +975,7 @@ p#form_success, .vfb-form-success {
 .widget-area .widget a:hover, .widget-area .widget a:focus, .widget-area .widget a:active {
   text-decoration: underline; }
 .widget-area .eo-future-date a {
-  background-color: #ddeffa;
-  padding: .2em 1em;
-  margin-left: -1em; }
+  background-color: #ddeffa; }
   .widget-area .eo-future-date a:hover, .widget-area .eo-future-date a:focus, .widget-area .eo-future-date a:active {
     background-color: #b0d9f4;
     text-decoration: none; }
@@ -1111,3 +1116,28 @@ footer[role="contentinfo"] {
     padding-top: 3em;
     clear: both;
     color: #555; }
+
+.entry-content .button,
+.button {
+  padding: .5em 1em;
+  background-color: #1a7ebe;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+  .entry-content .button:link, .entry-content .button:visited,
+  .button:link,
+  .button:visited {
+    color: #fff;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+  .entry-content .button:hover, .entry-content .button:active, .entry-content .button:focus,
+  .button:hover,
+  .button:active,
+  .button:focus {
+    background-color: #11517b;
+    text-decoration: none; }
