@@ -717,6 +717,9 @@ a[rel="tag"] {
 .tax-event-venue .event .event-entry-meta {
   margin-top: .5em; }
 
+.type-event img.attachment-thumbnail {
+  width: auto; }
+
 .single-event h4 {
   margin: 0 !important; }
 

@@ -24,8 +24,24 @@ get_header(); ?>
 <div id="primary" class="site-content">
 	<div id="content" role="main">
 
-		<!-- Page header-->
-
+	<!-- Page header-->
+	<header class="page-header">
+	<h1 class="page-title">
+		<?php
+			if( eo_is_event_archive('day') )
+				//Viewing date archive
+				echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('jS F Y');
+			elseif( eo_is_event_archive('month') )
+				//Viewing month archive
+				echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('F Y');
+			elseif( eo_is_event_archive('year') )
+				//Viewing year archive
+				echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('Y');
+			else
+				_e('Events','eventorganiser');
+		?>
+		</h1>
+	</header>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -57,36 +73,35 @@ get_header(); ?>
 
 				<div class="event-entry-meta">
 
-					<!-- Output the date of the occurrence-->
-					<?php
-						//Format date/time according to whether its an all day event.
-						//Use microdata http://support.google.com/webmasters/bin/answer.py?hl=en&answer=176035
- 						if( eo_is_all_day() ){
-							$format = 'd F Y';
-							$microformat = 'Y-m-d';
-						}else{
-							$format = 'd F Y '.get_option('time_format');
-							$microformat = 'c';
-						}?>
-						<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>"><?php eo_the_start($format); ?></time>
+  					<!-- Output the date of the occurrence-->
+  					<?php
+  					//Format date/time according to whether its an all day event.
+  					//Use microdata http://support.google.com/webmasters/bin/answer.py?hl=en&answer=176035
+   					if( eo_is_all_day() ){
+  						$format = 'd F Y';
+  						$microformat = 'Y-m-d';
+  					}else{
+  						$format = 'd F Y  <\s\p\a\n \c\l\a\s\s="\t-\i">g:ia</\s\p\a\n>';
+  						$microformat = 'c';
+  					}?>
+  					<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>"><?php eo_the_start($format); ?></time>
 
-					<!-- Display event meta list -->
-					<?php echo eo_get_event_meta_list(); ?>
+  					<!-- Display event meta list -->
+  					<?php echo eo_get_event_meta_list(); ?>
 
-					<!-- Event excerpt -->
-					<?php the_excerpt(); ?>
-			
-				</div><!-- .event-entry-meta -->			
-		
-				<div style="clear:both;"></div>
-				</header><!-- .entry-header -->
+  					<!-- Show Event text as 'the_excerpt' or 'the_content' -->
+  					<?php the_excerpt(); ?>
 
-			</article><!-- #post-<?php the_ID(); ?> -->
+  				</div><!-- .event-entry-meta -->
 
+  					<div style="clear:both;"></div>
+  					</header><!-- .entry-header -->
 
-    		<?php endwhile; ?><!--The Loop ends-->
+  				</article><!-- #post-<?php the_ID(); ?> -->
 
-		<!-- Navigate between pages-->
+      				<?php endwhile; ?><!--The Loop ends-->
+
+  				<!-- Navigate between pages-->
 		<?php 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<nav id="nav-below">
