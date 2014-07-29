@@ -383,6 +383,9 @@ article.type-page {
   color: #fff;
   padding: 1em; }
 
+.events-title {
+  margin-bottom: 1em; }
+
 #ticker {
   height: 300px;
   overflow: hidden; }

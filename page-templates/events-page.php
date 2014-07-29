@@ -17,7 +17,7 @@ get_header(); ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 		  <header class="entry-header">
-  			<h1 class="entry-title"><?php the_title(); ?></h1>
+  			<h1 class="entry-title events-title"><?php the_title(); ?></h1>
   		</header><!-- .entry-header -->
   		
       <?php
