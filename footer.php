@@ -16,7 +16,7 @@
 		  <div class="col left">
 		    <address>
 		      <strong>Saint Brigid’s Centre for the Arts</strong><br>
-	        <a href="tel:613 244 7373">613 244 7373</a><br>
+	        <!-- <a href="tel:613 244 7373">613 244 7373</a><br> -->
 	        310 St. Patrick Street<br>
 	        Ottawa ON K1N 5K4
 		    </address>
